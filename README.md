@@ -243,8 +243,14 @@ If the issue persists, try reinstalling `scikit-bio` with:
 This tool is BSD licensed, as found in the LICENSE file.
 
 ## Citation
-If you use KoSCAPEbio or Database curation script in your research, please cite it as follows:
-`[Citation Here]`
+If you use KoSCAPEbio or the Database curation script in your research, please cite it as follows:
+
+KoSCAPEbio: KoSC Analysis and Presence Exploration. (2025). *Zenodo*. https://doi.org/10.5281/zenodo.14927381
+
+Additionally please cite the related paper:
+`[TBD]`
+
+
 
 ## Contact
 For help and support, please contact:
