@@ -51,8 +51,8 @@ For comprehensive instructions on customizing or constructing your database usin
 Search the ASVs for presence of KoSC or any other species. by running **pressence-check**.
 ```
 qiime koscapebio presence-check \
---i-rep-seqs <path-to-rep-seqs.qza> \
---i-table <path-to-feature-table.qza> \
+--p-rep-seqs <path-to-rep-seqs.qza> \
+--p-table <path-to-feature-table.qza> \
 --p-perc-identity <percentage-identity> \
 --o-clustered-table <path-for-output.qza>
 ```
@@ -60,8 +60,8 @@ qiime koscapebio presence-check \
 Visualize the results and make them human readable by creation of a heatmap and by calculating relative abundance.
 ```
 qiime koscapebio abundance-profile \
---i-raw-table <path-to-raw-table.qza> \
---i-qiime-table <path-to-qiime-table.qza> \
+--p-raw-table <path-to-raw-table.qza> \
+--p-qiime-table <path-to-qiime-table.qza> \
 --p-work-dir <path-to-intermediate-file> \
 --o-relative-abundance <path-for-relative-abundance.qza>
 ```
@@ -185,8 +185,8 @@ By following these examples, you’ll see how KoSCAPEbio analyzes microbial comm
 To analyze the presence of **KoSC members** in the sample, run the `presence-check` command with the provided test files.
 ```
 qiime koscapebio presence-check \
-  --i-rep-seqs rep-seqs.qza \
-  --i-table table.qza \
+  --p-rep-seqs rep-seqs.qza \
+  --p-table table.qza \
   --p-perc-identity 1 \
   --o-clustered-table clustered_table.qza \
   --o-clustered-seqs clustered_seqs.qza \
