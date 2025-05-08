@@ -205,7 +205,7 @@ def abundance_profile(raw_table: str,
         grouped_abundance = raw_abundance_data.groupby('Species').sum()
 
         relative_abundance_data = grouped_abundance.div(total_abundances, axis=1)
-
+        relative_abundance_data = relative_abundance_data.fillna(0) #issue grouping 
         relative_abundance_data.to_csv(output_path, sep='\t')
         print(f"Relative abundance data saved to {output_path}")
 

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='koscapebio',
-    version="1.0.0",
+    version="1.0.1",
     packages=find_packages(),
     author="Amar Cosic",
     author_email="amar.cosic995@gmail.com",
