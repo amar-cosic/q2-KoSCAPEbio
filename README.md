@@ -12,23 +12,44 @@ Below is a visual overview of the workflow for database curation:
     <img src="https://github.com/amar-cosic/q2-KoSCAPEbio/blob/master/q2_koscapebio/figures/vs_workflow_overview.png" alt="Workflow Overview" width="600"/>
 </div>
 
-### Required Libraries:
-
-All required libraries can either be installed via pip using the command: `pip install biopython pandas numpy scikit-bio` or by running: `pip install -r requirements.txt`. 
-
 ## System Requirements
 
 KoSCAPEbio is designed for Linux and macOS environments. Windows users may encounter issues, especially when using WSL. For more details on Windows compatibility, see the **Troubleshooting** section.
 
 
+
 ## Installation
 
-Currently, KoSCAPEbio can only be installed directly from GitHub. Use the following command to install the tool:
+KoSCAPEbio is a QIIME 2 plugin and must be installed within a QIIME 2 environment.
+
+### Step 1: Install QIIME 2
+
+Follow the official installation instructions for your platform:  
+https://docs.qiime2.org
+
+> KoSCAPEbio has been tested with QIIME 2 version 2023.9.
+
+### Step 2: Install KoSCAPEbio
+
+Activate your QIIME 2 environment and install the plugin:
 
 ```bash
+conda activate qiime2-<your-qiime2-environmen>
 pip install git+https://github.com/amar-cosic/q2-KoSCAPEbio.git
+qiime dev refresh-cache
 ```
 - **Note**: This installation method uses GitHub as the source. A standard `pip` installation from PyPI and a `conda` installation will be available soon. Stay tuned for updates!
+
+## Compatibility
+
+KoSCAPEbio is compatible with:
+
+- QIIME 2 (tested with version 2023.9)
+- Python version provided by the QIIME 2 environment
+
+Newer QIIME versions may require updates to the plugin due to API changes.
+
+> KoSCAPEbio relies on the QIIME 2 environment for dependency management. Manual installation of Python dependencies is not required and may lead to conflicts.
 
 ## Database Preparation
 
@@ -48,7 +69,7 @@ For comprehensive instructions on customizing or constructing your database usin
 `conda activate qiime2-<version>`
 
 ### Step 2: PresenceCheck
-Search the ASVs for presence of KoSC or any other species. by running **pressence-check**.
+Search ASVs for the presence of KoSC or other species by running: **presence-check**.
 ```
 qiime koscapebio presence-check \
 --p-rep-seqs <path-to-rep-seqs.qza> \
@@ -248,7 +269,12 @@ If you use KoSCAPEbio or the Database curation script in your research, please c
 KoSCAPEbio: KoSC Analysis and Presence Exploration. (2025). *Zenodo*. https://doi.org/10.5281/zenodo.14927381
 
 Additionally please cite the related paper:
-`[TBD]`
+
+Cosic, A., et al. (2025).  
+*KoSCAPEbio: KoSC Analysis and Presence Exploration for microbial community studies.*  
+Microbial Ecology in Health and Disease.  
+https://www.tandfonline.com/doi/full/10.1080/19490976.2025.2582900
+
 
 
 

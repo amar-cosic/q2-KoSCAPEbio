@@ -18,13 +18,22 @@ Below is a visual overview of the workflow for database curation:
     <img src="https://github.com/amar-cosic/q2-KoSCAPEbio/blob/master/q2_koscapebio/figures/db_workflow_overview.png" alt="Workflow Overview" width="600"/>
 </div>
 
+
 ## Prerequisites
 
-Before using this script, ensure Python 3.8 or higher is installed on your system. Additionally, this script depends on several third-party libraries not included in the Python Standard Library.
+Before using this script, ensure Python ≥ 3.8 is installed. This tool depends on several third-party libraries.
 
-### Required Libraries:
+### Required Libraries
 
-All required libraries can either be installed via pip using the command: `pip install biopython pandas numpy scikit-bio` or by running: `pip install -r requirements.txt`. The `requirements.txt` file includes:
+Install dependencies using:
+
+```bash
+pip install biopython pandas numpy scipy scikit-bio scikit-learn matplotlib seaborn biom-format
+```
+
+### Supported versions
+
+The tool has been tested with the following versions:
 
 - `biom-format>=2.1.10`
 - `pandas==1.5.3`
@@ -33,8 +42,10 @@ All required libraries can either be installed via pip using the command: `pip i
 - `scipy==1.10.0`
 - `numpy>=1.21.0`
 - `scikit-learn>=0.24.2`
-- `Biopython==1.83`
+- `biopython>=1.86`
 - `scikit-bio==0.5.8`
+
+> Using significantly newer versions of these libraries may lead to compatibility issues.
 
 ## QIIME 2 Prerequisites
 
@@ -42,7 +53,7 @@ For utilizing the `-c --convert_qza` option, which converts output files into QI
 
 ## System Requirements
 
-This tool is designed for Linux and macOS environments. Windows user may use WSL or VM boxes. 
+This tool is designed for Linux and macOS environments. Windows users may use WSL or virtual machines (VMs).
 
 ## Quick Start
 
@@ -54,8 +65,8 @@ python3 database_curation.py --output ./custom_db_output --genome_number 5 --ema
 This command initiates the download of 5 genomes, processes them to extract 16S rRNA and hypervariable regions, and outputs the data in QIIME 2 compatible format, all stored within the `./custom_db_output` directory.
 
 ## Installation
+Download or clone the repository and navigate to the directory containing `database_curation.py`. Ensure that the `bla_database` folder is located in the same directory to enable bla-oxy checks.
 
-Clone the repository or download the `database_curation.py` script into your desired directory. In the same folder where the script is saved, store bla_database folder. This will ensure possibility to run bla-oxy checks.
 
 ## Detailed Parameter Descriptions
 
@@ -90,7 +101,7 @@ Below are the options you can use with `database_curation.py` to customize your 
 `-x`, `--bla_oxy BLA_OXY`: Specifies the path for the `bla_oxy` database. Only use this in standalone mode if the `bla_database` is located outside the current directory.
 ```
 
-Standalone parameters are only for usage outside of qiime2 and koscapebio plugin. 
+Standalone parameters are only intended for use outside of QIIME 2 and the KoSCAPEbio plugin.
 
 ## Example Usage
 
@@ -113,7 +124,7 @@ python3 database_curation.py \
 - `--output ./database_output`:Specifies where to save output files.
 - `--list_genomes`:Provides a list of specific species names to include in the database.
 - `--genome_number 10`:Downloads 10 genomes (if available) for each specified species.
-- `--refseq`:Downloads only genomes that are avalible in the refseq database
+- `--refseq`:Downloads only genomes that are available in the refseq database
 - `--convert_qza`:Converts the output to QIIME 2 `.qza` format for KoSCAPEbio.
 - `--consensus`:Generates a consensus sequence for the 16S rRNA regions.
 
@@ -228,7 +239,12 @@ This tool is BSD licensed, as found in the LICENSE file.
 ## Citation
 
 If you use Database curation script in your research, please cite it as follows:
-`[Citation Here]`
+
+Cosic, A., et al. (2025).  
+*KoSCAPEbio: KoSC Analysis and Presence Exploration for microbial community studies.*  
+Microbial Ecology in Health and Disease.  
+https://www.tandfonline.com/doi/full/10.1080/19490976.2025.2582900
+
 
 ## Contact
 
